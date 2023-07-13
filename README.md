@@ -84,7 +84,45 @@ If you got something like
 ```
 -bash: java: command not found
 ```
-That's completely fine! It just means we have to get java on your computer, which means installing the default JRE (Java Runtime Environment).
+That's completely fine! It just means we have to get java on your computer, which means installing the default JRE (Java Runtime Environment). When you're dealing with Java, you'll see a lot of acronyms starting ```j```. Don't worry about learning those for now.
 - *Might be a good idea to ask if a .jar looks like a regular file, directory, or executable*
 
-8. Just like most operating systems, each Linux distribution comes with a standardized way of 
+8. Just like most operating systems, each Linux distribution comes with a standardized way of distributing new software. For Windows, it's the Windows store. For MacOS and your iPhone it's the Apple App Store. For Linux, this is called a **Package Manager**. For the distribution we're using, this package manager is called ```apt``` or **A**dvanced **P**ackage **T**ool.
+
+If we want to learn more information about ```apt```, a could place to look is the manual pages. These can be accessed using:
+
+```
+man apt
+```
+
+There's a lot of confusing terms, so instead, let's just look up how to install a package using ```apt``` on the internet. We're not going to give you the command here, so you'll have to figure it out yourself.
+
+Don't run the command yet.
+
+- *sudo apt install <package>*
+
+9. But wait! What is that ```sudo``` part of the command? In Linux, there are a lot of actions that require elevated privileges to make sure that users on the system don't do anything they're not supposed to do. Look at your command line prompt. The format of the prompt is
+
+```
+<user>@<computer name>:~$
+```
+
+-*Ask "What is your user name?" to students*
+-*Ask "Why would it be useful to restrict access to certain actions?"*
+
+These elevated privileges are called **root privileges**. With root privileges, you gain access to the ```sudo``` command. ```sudo``` means **S**uper **U**ser **DO**, and for one command only, makes the computer think that you are a super user, or a user that can do anything to the computer.
+
+10. Run the command to install the package ```default-jre```.
+
+11. Run 
+```
+java -Xmx1024M -Xms1024M -jar minecraft_server.1.20.1.jar nogui 
+```
+
+to start the server. We found this command on the download page for the server. It will run for about and ask you to agree to a EULA before continuing. If you already know terminal based text editors, you can use that. If you don't, use the file explorer to open the ```EULA.txt``` in the ```minecraft``` folder. 
+
+Change ```eula=false``` to ```eula=true```. If it automatically opened LibreOffice, a software similar to Microsoft Word, make sure to click ```Use Text Format```, not ```Use ODF Format```.
+
+12. Use the up arrow in the terminal to rerun the command, or copy and paste it again from the website.
+
+After a while, you should see it start out map generation information
